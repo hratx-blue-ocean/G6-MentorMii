@@ -38,4 +38,52 @@ app.use(function (err, req, res, next) {
   });
 });
 
+// app.get('/api/Mentor', function (req, res) {
+//     db.getAllReviews((err, data) => {          
+//       if(err){                                
+//         console.log('Reviews server error');
+//         res.status(404).send(data);
+//       }else{
+//         console.log('Reviews server good');
+//         res.status(200).send(data);
+//       }
+//     })
+//   });
+
+//   app.post('/api/Mentor', function (req, res) {
+//     db.postReviews(req.body.singleName, req.body.singleReview,(err, data) => {          
+//       if(err){                                
+//         console.log('Reviews post to server error');
+//         res.sendStatus(404)
+//       }else{
+//         console.log('Reviews post server good');
+//         res.sendStatus(200);
+//       }
+//     })
+//   });
+
+//   app.get('/api/Mentii', function (req, res) {
+//     db.getAllJavascript((err, data) => {          
+//       if(err){                                
+//         console.log('js server error');
+//         res.status(404).send(data);
+//       }else{
+//         console.log('js server good');
+//         res.status(200).send(data);
+//       }
+//     })
+//   });
+
+//   app.get('/api/Mentii', function (req, res) {
+//     db.getAllC((err, data) => {          
+//       if(err){                                
+//         console.log('c server error');
+//         res.status(404).send(data);
+//       }else{
+//         console.log('c server good');
+//         res.status(200).send(data);
+//       }
+//     })
+// });
+
 module.exports = app;

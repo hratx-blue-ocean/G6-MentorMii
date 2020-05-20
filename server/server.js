@@ -2,6 +2,8 @@ const createError = require("http-errors");
 const logger = require("morgan");
 const express = require("express");
 const app = express();
+// const db = require('../database/queries');
+
 
 // open up CORS
 app.use((_, res, next) => {
@@ -62,17 +64,17 @@ app.use(function (err, req, res, next) {
 //     })
 //   });
 
-//   app.get('/api/Mentii', function (req, res) {
-//     db.getAllJavascript((err, data) => {          
-//       if(err){                                
-//         console.log('js server error');
-//         res.status(404).send(data);
-//       }else{
-//         console.log('js server good');
-//         res.status(200).send(data);
-//       }
-//     })
-//   });
+  app.get('/api/Mentii', function (req, res) {
+    db.getAllJavaScript((err, data) => {          
+      if(err){                                
+        console.log('js server error');
+        res.status(404).send(data);
+      }else{
+        console.log('js server good');
+        res.status(200).send(data);
+      }
+    })
+  });
 
 //   app.get('/api/Mentii', function (req, res) {
 //     db.getAllC((err, data) => {          

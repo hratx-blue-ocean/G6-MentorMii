@@ -1,0 +1,20 @@
+.Team-A-Header {
+    display: flex;
+  }
+  #Team-A-Title {
+    position: absolute;
+    left: 2%;
+  }
+  .Team-A-Search {
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 240px;
+  }
+  #Team-A-Search {
+    width: 600px;
+  }
+  .Team-A-Logo{
+    width: 10%;
+    height: auto;
+  }

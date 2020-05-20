@@ -1,0 +1,22 @@
+.Team-A-signIn{
+    position: absolute;
+    left: 9%;
+    top: 30%;
+}
+
+.signInTitle{
+    position: absolute;
+    bottom: 100%;
+}
+
+#password{
+    position: absolute;
+    top: 150%;
+    left: 0%
+}
+
+
+
+/* .signInTitle{
+    
+} */

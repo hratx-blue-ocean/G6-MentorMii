@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import fetch from 'node-fetch';
+import Header from './Components/Header';
+import SignIn from './Components/SignIn';
 // import './App.css';
 
 export default class App extends Component {
@@ -21,12 +23,9 @@ export default class App extends Component {
   render() {
     return (
       <>
-        <h1>Welcome to Blue Ocean!</h1>
-        <ul>
-          {this.state.seaCreatures.map((creature, index) => (
-            <li key={index}>{creature}</li>
-          ))}
-        </ul>
+        <Header />
+
+        <SignIn />
       </>
     );
   }

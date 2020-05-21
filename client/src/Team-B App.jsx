@@ -5,10 +5,6 @@ import MentorsViewer from "./Team-B Components/Team-B MentorsViewer.jsx";
 import Reviews from "./Team-B Components/Team-B Reviews.jsx";
 import ChatBox from "./Team-B Components/Team-B ChatBox.jsx";
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
 import './Styles/Team-B App.css';
 
 export default class App extends Component {
@@ -19,21 +15,7 @@ export default class App extends Component {
     };
     this.api = `http://localhost:8000/api/example`;
   }
-<<<<<<< Updated upstream
-=======
-import './Team-B App.css';
 
-export default class App extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     seaCreatures: [],
-  //   };
-  //   this.api = `http://localhost:8000/api/example`;
-  // }
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
   componentDidMount() {
     fetch(this.api)
       .then((res) => res.json())

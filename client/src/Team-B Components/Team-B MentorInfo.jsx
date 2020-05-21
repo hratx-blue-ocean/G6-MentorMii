@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../DummyData/12055105.jpg"; // Tell webpack this JS file uses this image
-import "../Styles/Team- B MentorInfo.css";
+import "../Styles/Team-B MentorInfo.css";
 
 class MentorInfo extends React.Component {
   render(props) {

@@ -12,8 +12,25 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      Username: [],
-      Password: "PASSWORD",
+      Username: ["Username"],
+      Mentors: [
+        "Adam Anderson",
+        "Alex Ashwoon",
+        "Aaron Aikin",
+        "Ben Bateman",
+        "Carl Bongard",
+        "Dan Bowers",
+        "David Boyd",
+        "Edward Cannon",
+        "Fred McCormack",
+        "Frank Miller",
+        "George Myers",
+        "Hal Nugent",
+        "Han Ortiz",
+        "Ike Orwig",
+        "John Pak",
+      ],
+      Password: ["PASSWORD"],
     };
     this.SearchFunc = this.SearchFunc.bind(this);
     this.MentorsViewerFunc = this.MentorsViewerFunc.bind(this);
@@ -47,14 +64,19 @@ export default class App extends Component {
   render() {
     return (
       <div className="Team-B-App">
-        <button onClick={this.testFunc}>Test</button>
         <div className="Team-B-Upper">
-          <Header SearchFunc={this.SearchFunc}></Header>
+          <Header
+            SearchFunc={this.SearchFunc}
+            Username={this.state.Username}
+          ></Header>
         </div>
         <div className="Team-B-Center">
           <div className="Team-B-Left">
             <MentorsViewer
               MentorsViewerFunc={this.MentorsViewerFunc}
+              Mentors={this.state.Mentors.map((Mentors, index) => (
+                <div key={index}>{Mentors}</div>
+              ))}
             ></MentorsViewer>
           </div>
           <div className="Team-B-Right">

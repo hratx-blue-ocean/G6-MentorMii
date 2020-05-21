@@ -7,14 +7,19 @@
   display: flex;
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-left: 240px;
+  margin-left: 12%;
 }
 #Team-B-Search {
-  width: 600px;
+  width: 1400px;
+}
+#Team-B-SearchButton {
+  padding-right: 2%;
+  margin-right: 60%;
 }
 #Team-B-UserName {
   position: fixed;
-  margin-left: 80%;
+  margin-left: 78%;
   padding-top: 20px;
   padding-bottom: 20px;
+  font-size: 23px;
 }

@@ -1,0 +1,14 @@
+
+.header{
+    position: absolute;
+    font-size: 250%;
+    left: 1%;
+    top: 0%;
+}
+
+.teamALogo{
+    position: absolute;
+    width: 5%;
+    height: auto;
+    left: 10%
+}

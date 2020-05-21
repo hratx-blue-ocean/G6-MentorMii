@@ -1,6 +1,11 @@
+/* eslint-disable */
 import React, { Component } from 'react';
 import fetch from 'node-fetch';
-// import './App.css';
+import Header from './Components/Header.jsx';
+import SignIn from './Components/SignIn.jsx';
+import SignUp from './Components/SignUp.jsx';
+import './Styles/App.css'
+
 
 export default class App extends Component {
   constructor(props) {
@@ -20,14 +25,14 @@ export default class App extends Component {
 
   render() {
     return (
-      <>
-        <h1>Welcome to Blue Ocean!</h1>
-        <ul>
-          {this.state.seaCreatures.map((creature, index) => (
-            <li key={index}>{creature}</li>
-          ))}
-        </ul>
-      </>
+      <div>
+        <div className="headerBorder"> </div>
+        <Header />
+
+        <SignIn />
+
+        <SignUp />
+      </div>
     );
   }
 }

@@ -20,10 +20,15 @@ module.exports = {
         loader : 'babel-loader'
       },
       {
-        test: /\.css$/,
-        include: SRC_DIR,
-        loader: 'css-loader'
-      }
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+       test: /\.(png|svg|jpg|gif)$/,
+       use: [
+         'file-loader',
+       ],
+      },
     ]
   },
   devServer: {

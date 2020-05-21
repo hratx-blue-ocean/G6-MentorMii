@@ -1,0 +1,60 @@
+.daniel{
+    position: fixed;
+    right: 10%;
+    top: 25%;
+    width: 10%;
+    height: auto;
+}
+.danielCheck{
+    position: fixed;
+    right: 15%;
+    top: 42%;
+}
+.danielQuestion{
+    position: fixed;
+    right: 13%;
+    top: 39.5%;
+}
+
+.mentiiLabel{
+    position: fixed;
+    right: 14%;
+    top: 37.5%;
+}
+
+.mentiiLabel{
+    position: fixed;
+    right: 14%;
+    top: 37.5%;
+}
+
+.miyagi{
+    position: fixed;
+    right: 25%;
+    top: 23%;
+    width: 12%;
+    height: auto;
+}
+.miyagiCheck{
+    position: fixed;
+    right: 31%;
+    top: 42%;
+}
+.miyagiQuestion{
+    position: fixed;
+    right: 29%;
+    top: 39.5%;
+}
+
+
+.mentorLabel{
+    position: fixed;
+    right: 30%;
+    top: 37.5%;
+}
+
+.signUp{
+    position: fixed;
+    right: 22%;
+    top: 50%;
+}

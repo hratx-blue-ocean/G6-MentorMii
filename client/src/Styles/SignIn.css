@@ -1,0 +1,24 @@
+.signInTitle{
+    position: fixed;
+    top: 35%;
+    left: 14.5%;
+    font-size: 150%;
+}
+
+#userName{
+    position: fixed;
+    top: 40%;
+    left: 15%;
+}
+
+#password{
+    position: fixed;
+    top: 45%;
+    left: 15%;
+}
+
+#signIn{
+    position: fixed;
+    top: 50%;
+    left: 20%;
+}

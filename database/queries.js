@@ -30,9 +30,41 @@ connection.query("SELECT * FROM Mentii;", (err, results) => {
 });
 };
 
-module.exports = {
-  getAllMentors,
-  getAllMentiis
+const postMentors = (firstName, lastName, skill, review, picture, userName, password, email, bio, cb) => {
+  connection.query(
+    "INSERT INTO Mentor(firstName, lastName, skill, review, picture, userName, password, email, bio) VALUES (? , ?)",
+    [firstName, lastName, skill, review, picture, userName, password, email, bio],
+    (err, data) => {
+      if (err) {
+        console.log("post mentor query error");
+        cb(err, null);
+      } else {
+        console.log("post mentor query good");
+        cb(null, data);
+      }
+    }
+  );
 };
 
+const postMentiis = (firstName, lastName, picture, userName, password, email, cb) => {
+  connection.query(
+    "INSERT INTO Mentii(firstName, lastName, picture, userName, password, email) VALUES (? , ?)",
+    [firstName, lastName, picture, review, userName, password, email],
+    (err, data) => {
+      if (err) {
+        console.log("post mentii query error");
+        cb(err, null);
+      } else {
+        console.log("post mentii query good");
+        cb(null, data);
+      }
+    }
+  );
+}
 
+module.exports = {
+  getAllMentors,
+  getAllMentiis,
+  postMentors,
+  postMentiis,
+};

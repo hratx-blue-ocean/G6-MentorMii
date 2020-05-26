@@ -1,0 +1,14 @@
+.Team-B-Mentor {
+    display: flex;
+    border: 5px solid #2829288c;
+    height: 100px;
+    width: 450px;
+    font-size: 31px;
+    align-items: center;
+  }
+  .Team-B-ReviewImages {
+    height: 98px;
+    width: 100px;
+    border: solid #2829288c;
+  }
+  

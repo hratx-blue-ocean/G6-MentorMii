@@ -1,0 +1,74 @@
+.Team-B-MentorInfoPage {
+  height: 430px;
+  width: 98%;
+  margin-top: 3px;
+  margin-left: 10px;
+  border: 3px solid #2829288c;
+}
+.Team-B-Bio{
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 27%;
+}
+.Team-B-AboutMe{
+    border: none;
+    width: 90%;
+    height: 324px;
+    font-size: 120%;
+}
+.Team-B-Grouped-Buttons {
+  border: none;
+  margin-top: 3px;
+  width: 98%;
+}
+.Team-B-MentorInfoImages {
+  height: 350px;
+  width: 350px;
+  border: 3px solid black;
+  float: left;
+}
+
+#Team-B-MessageMii {
+  background-color: white;
+  border: solid black;
+  color: black;
+  padding: 0.5% 4%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 3%;
+}
+#Team-B-VideoChat {
+  background-color: white;
+  border: solid black;
+  color: black;
+  padding: 0.5% 4%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 3%;
+}
+#Team-B-Chat {
+  background-color: white;
+  border: solid black;
+  color: black;
+  padding: 0.5% 4%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 3%;
+}
+#Team-B-Availability {
+  background-color: white;
+  border: solid black;
+  color: black;
+  padding: 0.5% 4%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 3%;
+}

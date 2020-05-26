@@ -16,6 +16,7 @@ export default class App extends Component {
       Username: "Username",
       Password: "12345",
       Mentors: DATABASE,
+      SelectedMentor: "",
       Search: "",
     };
     this.SearchFunc = this.SearchFunc.bind(this);
@@ -28,8 +29,10 @@ export default class App extends Component {
       console.log(this.state.Mentors);
     }
   }
-  MentorsViewerFunc() {
-    console.log("MentorsViewerFunc");
+  MentorsViewerFunc(e) {
+    this.setState((state) => {
+      console.log({ SelectedMentor: this.value });
+    });
   }
   MentorInfo() {
     console.log("MentorInfo");
@@ -64,19 +67,53 @@ export default class App extends Component {
               MentorsViewerFunc={this.MentorsViewerFunc}
               Mentors={this.state.Mentors.map(function (mentor) {
                 return (
-                  <div className="Team-B-MentorsViewer">
+                  <div>
                     <div className="Team-B-Mentor" key={mentor.id}>
                       <img className="Team-B-ReviewImages" src={mentor.image} />
                       <div>{mentor.name}</div>
                     </div>
+                    <br></br>
                   </div>
                 );
               })}
             ></MentorsViewer>
           </div>
           <div className="Team-B-Right">
-            <MentorInfo MentorInfo={this.MentorInfo}></MentorInfo>
-            <Reviews ReviewsInfo={this.ReviewsInfo}></Reviews>
+            <MentorInfo
+              MentorInfo={this.MentorInfo}
+              Info={this.state.Mentors.map(function (info) {
+                return (
+                  <div className="MentorInfoPage">
+                    <img
+                      className="Team-B-MentorInfoImages"
+                      src={info.image}
+                      alt="Logo"
+                    />
+                    <div key={info.id}>
+                      <div className="Team-B-Name"> {info.name}</div>
+                      <br></br>
+                      <div className="Team-B-AboutMe">
+                        <div>{info.bio}</div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            ></MentorInfo>
+            <Reviews
+              ReviewsInfo={this.ReviewsInfo}
+              Reviews={this.state.Mentors.map(function (review) {
+                return (
+                  <div>
+                    <div className="Team-B-Reviews" key={review.id}>
+                      <div>Review by {review.name}</div>
+                      <div>{review.review}</div>
+                    </div>
+                    <br></br>
+                  </div>
+                );
+              })}
+            ></Reviews>
           </div>
         </div>
         {/* <ChatBox></ChatBox> */}

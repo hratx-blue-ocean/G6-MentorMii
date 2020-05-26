@@ -2,7 +2,6 @@
 import React from "react";
 import "../Styles/Team-B MentorsViewer.css";
 
-class MentorsViewer extends React.Component {
 function MentorsViewer(props) {
   return (
     <div>

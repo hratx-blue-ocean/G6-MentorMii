@@ -3,6 +3,10 @@ import React from "react";
 import "../Styles/Team-B ChatBox.css";
 
 class ChatBox extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
   render(props) {
     return (
       <div className="Team-B-ChatBox">

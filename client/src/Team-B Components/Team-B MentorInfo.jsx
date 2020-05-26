@@ -3,6 +3,10 @@ import logo from "../DummyData/12055105.jpg"; // Tell webpack this JS file uses 
 import "../Styles/Team-B MentorInfo.css";
 
 class MentorInfo extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
   render(props) {
     return (
       <div className="Team-B-MentorInfoPage">
@@ -10,13 +14,10 @@ class MentorInfo extends React.Component {
           <img className="Team-B-MentorInfoImages" src={logo} alt="Logo" />
         </div>
         <div className="Team-B-Bio">
-          <div className="Team-B-MentorName">Mentor Name</div>
+          <div className="Team-B-MentorName">Sample Name: Display the name of Mentor</div>
           <br></br>
           <div className="Team-B-AboutMe">
-            About Me: Jenna Christiana Zeus is a 26-year-old clerk who enjoys
-            cookery, watching YouTube videos and binge-watching boxed sets. She
-            is generous and loveable, but can also be very unfriendly and a bit
-            standoffish.
+            About Me: Display the About me portion of the user selected in the MentorsViewer component. 
           </div>
         </div>
 

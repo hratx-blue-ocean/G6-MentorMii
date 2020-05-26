@@ -4,41 +4,29 @@ import React, { Component } from "react";
 import Header from "./Team-B Components/Team-B Header.jsx";
 import MentorsViewer from "./Team-B Components/Team-B MentorsViewer.jsx";
 import Reviews from "./Team-B Components/Team-B Reviews.jsx";
-// import ChatBox from "./Team-B Components/Team-B ChatBox.jsx";
 import MentorInfo from "./Team-B Components/Team-B MentorInfo.jsx";
+import { DATABASE } from "./DummyData/DummyData.js";
+// import ChatBox from "./Team-B Components/Team-B ChatBox.jsx";
 import "./Styles/Team-B App.css";
 
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      Username: ["Username"],
-      Mentors: [
-        "Adam Anderson",
-        "Alex Ashwoon",
-        "Aaron Aikin",
-        "Ben Bateman",
-        "Carl Bongard",
-        "Dan Bowers",
-        "David Boyd",
-        "Edward Cannon",
-        "Fred McCormack",
-        "Frank Miller",
-        "George Myers",
-        "Hal Nugent",
-        "Han Ortiz",
-        "Ike Orwig",
-        "John Pak",
-      ],
-      Password: ["PASSWORD"],
+      Username: "Username",
+      Password: "12345",
+      Mentors: DATABASE,
+      Search: "",
     };
     this.SearchFunc = this.SearchFunc.bind(this);
     this.MentorsViewerFunc = this.MentorsViewerFunc.bind(this);
     this.MentorInfo = this.MentorInfo.bind(this);
     this.ReviewsInfo = this.ReviewsInfo.bind(this);
   }
-  SearchFunc() {
-    console.log("SearchFunc");
+  SearchFunc(e) {
+    if (this.state.Search === this.state.Mentors) {
+      console.log(this.state.Mentors);
+    }
   }
   MentorsViewerFunc() {
     console.log("MentorsViewerFunc");
@@ -74,9 +62,16 @@ export default class App extends Component {
           <div className="Team-B-Left">
             <MentorsViewer
               MentorsViewerFunc={this.MentorsViewerFunc}
-              Mentors={this.state.Mentors.map((Mentors, index) => (
-                <div key={index}>{Mentors}</div>
-              ))}
+              Mentors={this.state.Mentors.map(function (mentor) {
+                return (
+                  <div className="Team-B-MentorsViewer">
+                    <div className="Team-B-Mentor" key={mentor.id}>
+                      <img className="Team-B-ReviewImages" src={mentor.image} />
+                      <div>{mentor.name}</div>
+                    </div>
+                  </div>
+                );
+              })}
             ></MentorsViewer>
           </div>
           <div className="Team-B-Right">

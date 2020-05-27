@@ -10,7 +10,7 @@ class SignIn extends React.Component {
               <div>                 
                   <label className="signInTitle"> MentorMii Sign In </label>
                   <input type="text" id="userName" placeholder="Username" name="user" />
-                  <input type="text" id="password" placeholder="Password" name="pw" /> 
+                  <input type="password" id="password" placeholder="Password" name="pw" /> 
                   <button type="submit" id="signIn" >Sign In</button>                                    
               </div>          
       </div>

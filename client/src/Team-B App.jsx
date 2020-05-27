@@ -48,7 +48,7 @@ export default class App extends Component {
     axios
       .get("http://localhost:3033/api/Mentor/Skills", {
         params: {
-          skills,
+          skills: skills,
         },
       })
       .then((res) => {

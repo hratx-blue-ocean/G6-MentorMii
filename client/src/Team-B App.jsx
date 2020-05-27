@@ -17,23 +17,35 @@ export default class App extends Component {
       // Password: "12345",
       mentors: [],
       SelectedMentor: "",
-      Search: "",
+      search: "",
     };
-    this.SearchFunc = this.SearchFunc.bind(this);
+    this.updateSearch = this.updateSearch.bind(this);
+    this.SearchDataBase = this.SearchDataBase.bind(this);
+
     this.getAllMentor = this.getAllMentor.bind(this);
     this.MentorInfo = this.MentorInfo.bind(this);
     this.ReviewsInfo = this.ReviewsInfo.bind(this);
   }
-  SearchFunc(e) {
-    if (this.state.Search === this.state.Mentors) {
-      console.log(this.state.Mentors);
-    }
+  updateSearch(event){
+    this.setState({ search: event.target.value });
+    console.log("Search",this.state.search);
   }
-  MentorsViewerFunc(e) {
-    this.setState((state) => {
-      console.log({ SelectedMentor: this.value });
-    });
+  SearchDataBase() {
+   const database = this.state.mentors;
+   console.log(database);
+   for (let i = 0; i < database.length;i++){ //iterate through array
+     if (database[i].skill === this.state.search) {// compare skills in array to input
+     console.log(database[i].firstName);
+     } else {
+       return null
+     }
+     }
   }
+  // MentorsViewerFunc(e) {
+  //   this.setState((state) => {
+  //     console.log({ SelectedMentor: this.value });
+  //   });
+
   MentorInfo() {
     console.log("MentorInfo");
   }
@@ -67,18 +79,20 @@ export default class App extends Component {
       });
   }
 
-  componentDidMount(){
-    this.getAllMentor()
+  componentDidMount() {
+    this.getAllMentor();
   }
 
   render() {
+    // let filteredMentors = this.props.mentors
     return (
       <div className="Team-B-App">
         <div className="Team-B-Upper">
           <Header
-            getAllMentor={this.SearchFunc}
+            updateSearch={this.updateSearch}
+            SearchDataBase={this.SearchDataBase}
             userName={this.state.userName}
-            ></Header>
+          ></Header>
         </div>
         <div className="Team-B-Center">
           <div className="Team-B-Left">
@@ -91,14 +105,16 @@ export default class App extends Component {
                       <img
                         className="Team-B-ReviewImages"
                         src={mentor.picture}
-                        />
-                      <div>{mentor.firstName} {mentor.lastName}</div>
+                      />
+                      <div>
+                        {mentor.firstName} {mentor.lastName}
+                      </div>
                     </div>
                     <br></br>
                   </div>
                 );
               })}
-              ></MentorsViewer>
+            ></MentorsViewer>
           </div>
           <div className="Team-B-Right">
             <MentorInfo
@@ -110,7 +126,7 @@ export default class App extends Component {
                       className="Team-B-MentorInfoImages"
                       src={info.picture}
                       alt="Logo"
-                      />
+                    />
                     <div key={info.id}>
                       <div className="Team-B-Name"> {info.firstName}</div>
                       <br></br>
@@ -121,7 +137,7 @@ export default class App extends Component {
                   </div>
                 );
               })}
-              ></MentorInfo>
+            ></MentorInfo>
             <Reviews
               ReviewsInfo={this.ReviewsInfo}
               Reviews={this.state.mentors.map(function (review) {
@@ -135,8 +151,7 @@ export default class App extends Component {
                   </div>
                 );
               })}
-              ></Reviews>
-           
+            ></Reviews>
           </div>
         </div>
         {/* <ChatBox></ChatBox> */}

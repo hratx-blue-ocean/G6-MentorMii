@@ -4,11 +4,14 @@ import React from "react";
 import "../Styles/Team-B Header.css";
 
 function Header(props) {
+  
   return (
     <div className="Team-B-Header">
       <h1 id="Team-B-Title">MentorMii</h1>
       <div className="Team-B-Search">
         <input
+          value={props.search}
+          onChange={props.updateSearch}
           placeholder="Your skill.."
           id="Team-B-Search"
           type="search"
@@ -16,7 +19,7 @@ function Header(props) {
         <input
           id="Team-B-SearchButton"
           type="button"
-          onClick={props.SearchFunc}
+          onClick={props.SearchDataBase}
         ></input>
       </div>
       <div id="Team-B-UserName">{props.Username}</div>

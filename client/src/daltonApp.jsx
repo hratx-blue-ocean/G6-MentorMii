@@ -31,4 +31,3 @@ export default class daltonApp extends Component {
     );
   }
 }
-export default daltonApp;

@@ -16,11 +16,11 @@ function Header(props) {
           id="Team-B-Search"
           type="search"
         ></input>
-        <input
+        <button
           id="Team-B-SearchButton"
-          type="button"
-          onClick={props.SearchDataBase}
-        ></input>
+          type="submit"
+          onClick={()=>{props.getMentorsBySkills()}}
+        ></button>
       </div>
       <div id="Team-B-UserName">{props.Username}</div>
     </div>

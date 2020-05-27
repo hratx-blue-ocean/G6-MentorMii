@@ -16,35 +16,26 @@ export default class App extends Component {
       // userName: "userName",
       // Password: "12345",
       mentors: [],
+      dummydata: [],
       SelectedMentor: "",
       search: "",
     };
     this.updateSearch = this.updateSearch.bind(this);
     this.SearchDataBase = this.SearchDataBase.bind(this);
+    this.getMentorsBySkills = this.getMentorsBySkills.bind(this);
 
     this.getAllMentor = this.getAllMentor.bind(this);
     this.MentorInfo = this.MentorInfo.bind(this);
     this.ReviewsInfo = this.ReviewsInfo.bind(this);
   }
-  updateSearch(event){
+  updateSearch(event) {
     this.setState({ search: event.target.value });
-    console.log("Search",this.state.search);
+    console.log("Search", this.state.search);
   }
   SearchDataBase() {
-   const database = this.state.mentors;
-   console.log(database);
-   for (let i = 0; i < database.length;i++){ //iterate through array
-     if (database[i].skill === this.state.search) {// compare skills in array to input
-     console.log(database[i].firstName);
-     } else {
-       return null
-     }
-     }
+    const database = this.state.mentors;
+    console.log(database);
   }
-  // MentorsViewerFunc(e) {
-  //   this.setState((state) => {
-  //     console.log({ SelectedMentor: this.value });
-  //   });
 
   MentorInfo() {
     console.log("MentorInfo");
@@ -52,25 +43,30 @@ export default class App extends Component {
   ReviewsInfo() {
     console.log("ReviewsInfo");
   }
-  MessageMiiFunc() {
-    console.log("MessageMiiFunc");
+  getMentorsBySkills() {
+    const skills = this.state.search;
+    axios
+      .get("http://localhost:3033/api/Mentor/Skills", {
+        params: {
+          skills,
+        },
+      })
+      .then((res) => {
+        const data = res.data;
+        this.setState({ mentors: data }, () => {
+          console.log("GETMentorsbybskills", [data]);
+        });
+      })
+      .catch((err) => {
+        console.error();
+      });
   }
-  VideoChatFunc() {
-    console.log("VideoChatFunc");
-  }
-  ChatFunc() {
-    console.log("ChatFunc");
-  }
-  Availability() {
-    console.log("Availability");
-  }
-
   getAllMentor() {
     axios
       .get("http://localhost:3033/api/Mentor")
       .then((res) => {
         const data = res.data;
-        this.setState({ mentors: data }, () => {
+        this.setState({ dummydata: data }, () => {
           console.log("js front end works");
         });
       })
@@ -78,20 +74,18 @@ export default class App extends Component {
         console.error();
       });
   }
-
-  componentDidMount() {
-    this.getAllMentor();
-  }
-
-  render() {
-    // let filteredMentors = this.props.mentors
+  // componentDidMount() {
+  //   this.getAllMentor();
+  // }
+  render(props) {
     return (
       <div className="Team-B-App">
         <div className="Team-B-Upper">
           <Header
             updateSearch={this.updateSearch}
-            SearchDataBase={this.SearchDataBase}
+            getMentorsBySkills={this.getMentorsBySkills}
             userName={this.state.userName}
+            search={this.state.search}
           ></Header>
         </div>
         <div className="Team-B-Center">
@@ -119,7 +113,7 @@ export default class App extends Component {
           <div className="Team-B-Right">
             <MentorInfo
               MentorInfo={this.MentorInfo}
-              Info={this.state.mentors.map(function (info) {
+              Info={this.state.mentors.map((info) => {
                 return (
                   <div className="MentorInfoPage">
                     <img
@@ -140,14 +134,13 @@ export default class App extends Component {
             ></MentorInfo>
             <Reviews
               ReviewsInfo={this.ReviewsInfo}
-              Reviews={this.state.mentors.map(function (review) {
+              Reviews={this.state.mentors.map((review) => {
                 return (
                   <div>
-                    <div className="Team-B-Reviews" key={review.id}>
-                      <div>Review by {review.firstName}</div>
+                    <ul className="Team-B-Reviews" key={review.id}>
+                      <div>Review by {review.userName}</div>
                       <div>{review.review}</div>
-                    </div>
-                    <br></br>
+                    </ul>
                   </div>
                 );
               })}
@@ -159,3 +152,16 @@ export default class App extends Component {
     );
   }
 }
+
+// MessageMiiFunc() {
+//   console.log("MessageMiiFunc");
+// }
+// VideoChatFunc() {
+//   console.log("VideoChatFunc");
+// }
+// ChatFunc() {
+//   console.log("ChatFunc");
+// }
+// Availability() {
+//   console.log("Availability");
+// }

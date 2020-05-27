@@ -1,10 +1,9 @@
-<<<<<<< HEAD
 
 .header{
     position: absolute;
     font-size: 250%;
     left: 1%;
-    top: 0%;
+    top: 2%;
 }
 
 .teamALogo{
@@ -12,27 +11,11 @@
     width: 5%;
     height: auto;
     left: 11%;
-    top: 1%;
+    top: .5%;
 }
-=======
-.Team-A-Header {
-    display: flex;
-  }
-  #Team-A-Title {
-    position: absolute;
-    left: 2%;
-  }
-  .Team-A-Search {
-    display: flex;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 240px;
-  }
-  #Team-A-Search {
-    width: 600px;
-  }
-  .Team-A-Logo{
-    width: 10%;
-    height: auto;
-  }
->>>>>>> f287719888884c51b669221cb3028653ad331eec
+
+.border{
+  width: auto;
+  border: 5px solid #2829288c;
+  padding: 50px;
+}

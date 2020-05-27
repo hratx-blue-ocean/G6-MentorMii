@@ -8,6 +8,7 @@ import MentorInfo from "./Team-B Components/Team-B MentorInfo.jsx";
 // import ChatBox from "./Team-B Components/Team-B ChatBox.jsx";
 import "./Styles/Team-B App.css";
 import axios from "axios";
+import daltonApp from "./daltonApp.jsx";
 
 export default class App extends Component {
   constructor(props) {

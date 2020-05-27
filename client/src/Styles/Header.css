@@ -1,0 +1,21 @@
+
+.header{
+    position: absolute;
+    font-size: 250%;
+    left: 1%;
+    top: 2%;
+}
+
+.teamALogo{
+    position: absolute;
+    width: 5%;
+    height: auto;
+    left: 11%;
+    top: .5%;
+}
+
+.border{
+  width: auto;
+  border: 5px solid #2829288c;
+  padding: 50px;
+}

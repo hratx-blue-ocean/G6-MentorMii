@@ -1,11 +1,17 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import fetch from 'node-fetch';
+<<<<<<< HEAD:client/src/App.jsx
 import Header from './Components/Header.jsx';
 import SignIn from './Components/SignIn.jsx';
 import SignUp from './Components/SignUp.jsx';
 import './Styles/App.css'
 
+=======
+import Header from './Components/Header';
+import SignIn from './Components/SignIn';
+// import './App.css';
+>>>>>>> f287719888884c51b669221cb3028653ad331eec:client/src/App.js
 
 export default class App extends Component {
   constructor(props) {
@@ -25,6 +31,7 @@ export default class App extends Component {
 
   render() {
     return (
+<<<<<<< HEAD:client/src/App.jsx
       <div>
         <div className="headerBorder"></div>
         <Header />
@@ -33,6 +40,13 @@ export default class App extends Component {
 
         <SignUp />
       </div>
+=======
+      <>
+        <Header />
+
+        <SignIn />
+      </>
+>>>>>>> f287719888884c51b669221cb3028653ad331eec:client/src/App.js
     );
   }
 }

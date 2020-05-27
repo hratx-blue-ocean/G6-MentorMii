@@ -6,7 +6,7 @@ import SignUp from './Components/SignUp.jsx';
 import './Styles/App.css'
 
 
-export default class App extends Component {
+export default class daltonApp extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,3 +31,4 @@ export default class App extends Component {
     );
   }
 }
+export default daltonApp;

@@ -1,0 +1,27 @@
+.Team-B-Header {
+  display: flex;
+}
+#Team-B-Title {
+}
+.Team-B-Search {
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left: 12%;
+}
+#Team-B-Search {
+  width: 1400px;
+}
+#Team-B-SearchButton {
+  padding-right: 2%;
+  margin-right: 60%;
+}
+#Team-B-UserName {
+  position: fixed;
+  margin-left: 78%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 23px;
+}
+
+

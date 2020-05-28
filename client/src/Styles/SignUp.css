@@ -1,19 +1,19 @@
-.daniel{
-    position: absolute;
-    right: 35%;
-    top: 40%;
-    width: 10%;
-    height: auto;
+.daniel {
+  position: absolute;
+  right: 35%;
+  top: 40%;
+  width: 10%;
+  height: auto;
 }
-.danielCheck{
-    position: absolute;
-    right: 40%;
-    top: 60%;
+.danielCheck {
+  position: absolute;
+  right: 40%;
+  top: 60%;
 }
-.danielQuestion{
-    position: absolute;
-    right: 37.5%;
-    top: 56.1%;
+.danielQuestion {
+  position: absolute;
+  right: 37.5%;
+  top: 56.1%;
 }
 
 /* .mentiiLabel{
@@ -22,39 +22,38 @@
     top: 37.5%;
 } */
 
-.mentiiLabel{
-    position: absolute;
-    right: 38.5%;
-    top: 55%;
+.mentiiLabel {
+  position: absolute;
+  right: 38.5%;
+  top: 55%;
 }
 
-.miyagi{
-    position: absolute;
-    right: 49%;
-    top: 38%;
-    width: 12%;
-    height: auto;
+.miyagi {
+  position: absolute;
+  right: 49%;
+  top: 38%;
+  width: 12%;
+  height: auto;
 }
-.miyagiCheck{
-    position: absolute;
-    right: 55.2%;
-    top: 60%;
+.miyagiCheck {
+  position: absolute;
+  right: 55.2%;
+  top: 60%;
 }
-.miyagiQuestion{
-    position: absolute;
-    right: 52.5%;
-    top: 56.2%;
-}
-
-
-.mentorLabel{
-    position: absolute;
-    right: 53.4%;
-    top: 55%;
+.miyagiQuestion {
+  position: absolute;
+  right: 52.5%;
+  top: 56.2%;
 }
 
-.signUp{
-    position: absolute;
-    right: 46.1%;
-    top: 65%;
+.mentorLabel {
+  position: absolute;
+  right: 53.4%;
+  top: 55%;
+}
+
+.signUp {
+  position: absolute;
+  right: 46.1%;
+  top: 65%;
 }

@@ -4,7 +4,6 @@ import React from "react";
 import "../Styles/Team-B Header.css";
 
 function Header(props) {
-  
   return (
     <div className="Team-B-Header">
       <h1 id="Team-B-Title">MentorMii</h1>
@@ -19,7 +18,9 @@ function Header(props) {
         <button
           id="Team-B-SearchButton"
           type="submit"
-          onClick={()=>{props.getMentorsBySkills()}}
+          onClick={() => {
+            props.getMentorsBySkills();
+          }}
         ></button>
       </div>
       <div id="Team-B-UserName">{props.Username}</div>

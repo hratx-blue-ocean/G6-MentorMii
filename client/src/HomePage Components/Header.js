@@ -1,5 +1,5 @@
 import React from "react";
-import '../Styles/Header.css'
+import "../Styles/Header.css";
 
 class Header extends React.Component {
   render() {
@@ -10,7 +10,10 @@ class Header extends React.Component {
           <input id="Team-A-Search" type="search"></input>
           <input type="button"></input>
         </div> */}
-        <img className="Team-A-Logo" src="https://pngimg.com/uploads/letter_m/letter_m_PNG87.png"></img>
+        <img
+          className="Team-A-Logo"
+          src="https://pngimg.com/uploads/letter_m/letter_m_PNG87.png"
+        ></img>
       </div>
     );
   }

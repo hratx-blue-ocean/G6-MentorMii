@@ -1,20 +1,19 @@
-
-.header{
-    position: absolute;
-    font-size: 250%;
-    left: 47.5%;
-    top: 2%;
+.header {
+  position: absolute;
+  font-size: 250%;
+  left: 47.5%;
+  top: 2%;
 }
 
-.teamALogo{
-    position: absolute;
-    width: 15%;
-    height: auto;
-    left: 45%;
-    top: 10%;
+.teamALogo {
+  position: absolute;
+  width: 15%;
+  height: auto;
+  left: 45%;
+  top: 10%;
 }
 
-.border{
+.border {
   width: auto;
   border: 5px solid #2829288c;
   padding: 50px;

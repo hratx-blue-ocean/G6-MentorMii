@@ -1,16 +1,15 @@
 /* eslint-disable */
 import React, { Component } from "react";
 // import fetch from "node-fetch";
-import Header from "./Team-B Components/Team-B Header.jsx";
-import MentorsViewer from "./Team-B Components/Team-B MentorsViewer.jsx";
-import Reviews from "./Team-B Components/Team-B Reviews.jsx";
-import MentorInfo from "./Team-B Components/Team-B MentorInfo.jsx";
+import Header from "./MainPage Components/MainPage Header.jsx";
+import MentorsViewer from "./MainPage Components/MainPage MentorsViewer.jsx";
+import Reviews from "./MainPage Components/MainPage Reviews.jsx";
+import MentorInfo from "./MainPage Components/MainPage MentorInfo.jsx";
 // import ChatBox from "./Team-B Components/Team-B ChatBox.jsx";
-import "./Styles/Team-B App.css";
+import "./Styles/MainPage.css";
 import axios from "axios";
-import daltonApp from "./daltonApp.jsx";
 
-export default class App extends Component {
+export default class MainPage extends Component {
   constructor(props) {
     super(props);
     this.state = {

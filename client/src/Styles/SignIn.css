@@ -1,35 +1,35 @@
-.signInTitle{
-    position: absolute;
-    top: 35%;
-    left: 14.5%;
-    font-size: 150%;
+.signInTitle {
+  position: absolute;
+  top: 35%;
+  left: 14.5%;
+  font-size: 150%;
 }
 
-#userName{
-    position: absolute;
-    top: 40%;
-    left: 15%;
+#userName {
+  position: absolute;
+  top: 40%;
+  left: 15%;
 }
 
-#password{
-    position: absolute;
-    top: 45%;
-    left: 15%;
+#password {
+  position: absolute;
+  top: 45%;
+  left: 15%;
 }
 
-#signIn{
-    position: absolute;
-    top: 50%;
-    left: 20%;
+#signIn {
+  position: absolute;
+  top: 50%;
+  left: 20%;
 }
 
-.SignInButton{
-    position: absolute;
-    right: 5%;
-    top: 3%;
+.SignInButton {
+  position: absolute;
+  right: 5%;
+  top: 3%;
 }
 
-.modalSignInButton{
-    position: relative;
-    right: 0%;
+.modalSignInButton {
+  position: relative;
+  right: 0%;
 }

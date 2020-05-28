@@ -3,12 +3,7 @@ import React from "react";
 import "../Styles/Team-B Reviews.css";
 
 function Reviews(props) {
-  return (
-    <div className="Team-B-ReviewsPage">
-     {props.Reviews}
-      </div>
-
-  );
+  return <div className="Team-B-ReviewsPage">{props.Reviews}</div>;
 }
 export default Reviews;
 

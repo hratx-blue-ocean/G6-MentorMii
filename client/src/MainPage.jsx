@@ -7,6 +7,7 @@ import Reviews from "./MainPage Components/MainPage Reviews.jsx";
 import MentorInfo from "./MainPage Components/MainPage MentorInfo.jsx";
 // import ChatBox from "./Team-B Components/Team-B ChatBox.jsx";
 import "./Styles/MainPage.css";
+import "./Styles/Team-B App.css";
 import axios from "axios";
 
 export default class MainPage extends Component {
@@ -15,34 +16,32 @@ export default class MainPage extends Component {
     this.state = {
       // userName: "userName",
       // Password: "12345",
-      mentors: [],
-      dummydata: [],
+      mentorsBySkills: [],
+      allMentors: [],
       SelectedMentor: "",
       search: "",
     };
     this.updateSearch = this.updateSearch.bind(this);
     this.SearchDataBase = this.SearchDataBase.bind(this);
     this.getMentorsBySkills = this.getMentorsBySkills.bind(this);
-
     this.getAllMentor = this.getAllMentor.bind(this);
+
     this.MentorInfo = this.MentorInfo.bind(this);
-    this.ReviewsInfo = this.ReviewsInfo.bind(this);
   }
   updateSearch(event) {
     this.setState({ search: event.target.value });
     console.log("Search", this.state.search);
   }
   SearchDataBase() {
-    const database = this.state.mentors;
+    const database = this.state.mentorsBySkills;
     console.log(database);
   }
 
   MentorInfo() {
-    console.log("MentorInfo");
+    this.setState({ SelectedMentor: event.target.id });
+    console.log("MentorInfo", SelectedMentor);
   }
-  ReviewsInfo() {
-    console.log("ReviewsInfo");
-  }
+
   getMentorsBySkills() {
     const skills = this.state.search;
     axios
@@ -53,8 +52,8 @@ export default class MainPage extends Component {
       })
       .then((res) => {
         const data = res.data;
-        this.setState({ mentors: data }, () => {
-          console.log("GETMentorsbybskills", [data]);
+        this.setState({ mentorsBySkills: data }, () => {
+          console.log("getMentorsBySkills", [data]);
         });
       })
       .catch((err) => {
@@ -66,17 +65,17 @@ export default class MainPage extends Component {
       .get("http://localhost:3033/api/Mentor")
       .then((res) => {
         const data = res.data;
-        this.setState({ dummydata: data }, () => {
-          console.log("js front end works");
+        this.setState({ allMentors: data }, () => {
+          console.log("getAllMentor");
         });
       })
       .catch((err) => {
         console.error();
       });
   }
-  // componentDidMount() {
-  //   this.getAllMentor();
-  // }
+  componentDidMount() {
+    this.getAllMentor();
+  }
   render(props) {
     return (
       <div className="Team-B-App">
@@ -91,29 +90,31 @@ export default class MainPage extends Component {
         <div className="Team-B-Center">
           <div className="Team-B-Left">
             <MentorsViewer
-              MentorsViewerFunc={this.MentorsViewerFunc}
-              Mentors={this.state.mentors.map((mentor, index) => {
-                return (
-                  <div>
-                    <div className="Team-B-Mentor" key={index}>
-                      <img
-                        className="Team-B-ReviewImages"
-                        src={mentor.picture}
-                      />
-                      <div>
-                        {mentor.firstName} {mentor.lastName}
+              MentorInfo={this.MentorInfo}
+              Mentors={this.state.mentorsBySkills.map(
+                (mentorsBySkills, index) => {
+                  return (
+                    <button>
+                      <div className="Team-B-Mentor" key={index}>
+                        <img
+                          className="Team-B-ReviewImages"
+                          src={mentorsBySkills.picture}
+                        />
+                        <div>
+                          {mentorsBySkills.firstName} {mentorsBySkills.lastName}
+                        </div>
                       </div>
-                    </div>
-                    <br></br>
-                  </div>
-                );
-              })}
+                      <br></br>
+                    </button>
+                  );
+                }
+              )}
             ></MentorsViewer>
           </div>
           <div className="Team-B-Right">
             <MentorInfo
               MentorInfo={this.MentorInfo}
-              Info={this.state.mentors.map((info) => {
+              Info={this.state.mentorsBySkills.map((info) => {
                 return (
                   <div className="MentorInfoPage">
                     <img
@@ -133,8 +134,7 @@ export default class MainPage extends Component {
               })}
             ></MentorInfo>
             <Reviews
-              ReviewsInfo={this.ReviewsInfo}
-              Reviews={this.state.mentors.map((review) => {
+              Reviews={this.state.mentorsBySkills.map((review) => {
                 return (
                   <div>
                     <ul className="Team-B-Reviews" key={review.id}>

@@ -9,7 +9,7 @@ class MentorInfo extends React.Component {
   render(props) {
     return (
       <div className="Team-B-MentorInfoPage">
-        {this.props.Info[1]}
+        {this.props.Info[3]}
         <div className="Team-B-Grouped-Buttons">
           <button id="Team-B-MessageMii">MessageMii</button>
           <button id="Team-B-VideoChat">Video Chat</button>

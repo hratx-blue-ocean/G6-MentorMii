@@ -5,7 +5,6 @@ import SignIn from "./HomePage Components/SignIn.jsx";
 import SignUp from "./HomePage Components/SignUp.jsx";
 import MainPage from "./MainPage.jsx";
 import "./Styles/App.css";
-import "./Styles/MainPage.css";
 
 export default class HomePage extends Component {
   constructor(props) {

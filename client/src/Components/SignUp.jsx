@@ -56,36 +56,6 @@ class SignUp extends React.Component {
     })
   }
 
-//   this.state = {
-//     // set state here
-//     balance: '',
-//     isLoggedOn: false
-//   }clickHandler(e) {
-//   this.setState({
-//     isLoggedOn: true
-//   }, () => {
-//     axios.
-//       get('http://localhost:3033/api/mentors', {
-//       params: {
-//         user: this.state.user,
-//       },
-//     })
-//       .then((response) => {
-//         console.log(response);
-//         this.setState({
-//           user: response.data[0].name,
-//           balance: response.data[0].balance
-//         }, () => {
-//           console.log('clickHandler works', this.state.user);
-//         });
-//       })
-//       .catch((error) => {
-//         console.error('name not in DB', error);
-//       })
-//   });
-//   e.preventDefault();
-// }
-
  firstNameInput(e){
   e.preventDefault();
   this.setState({firstName:e.target.value})

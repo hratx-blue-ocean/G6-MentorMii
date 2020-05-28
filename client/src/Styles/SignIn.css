@@ -22,3 +22,14 @@
     top: 50%;
     left: 20%;
 }
+
+.SignInButton{
+    position: absolute;
+    right: 5%;
+    top: 3%;
+}
+
+.modalSignInButton{
+    position: relative;
+    right: 0%;
+}

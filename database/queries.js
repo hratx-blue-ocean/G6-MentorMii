@@ -45,6 +45,21 @@ const getMentorsBySkills = (skill, cb) => {
     }
   );
 };
+const getMentor = (firstName, lastName, cb) => {
+  connection.query(
+    "SELECT * FROM Mentor WHERE firstName = ? && lastName= ? ",
+    [firstName],[lastName],
+    (err, results) => {
+      if (err) {
+        console.log("getMentorsBySkills: Failed");
+        cb(err, null);
+      } else {
+        console.log("getMentorsBySkills: Successful");
+        cb(null, results);
+      }
+    }
+  );
+};
 // const getMentorsInfo = (picture,userName,bio, cb) => {
 //   connection.query(
 //     "SELECT * FROM Mentor WHERE picture = ? ",
@@ -124,6 +139,7 @@ const postMentiis = (
 
 module.exports = {
   // getMentorsInfo,
+  getMentor,
   getAllMentors,
   getMentorsBySkills,
   getAllMentiis,

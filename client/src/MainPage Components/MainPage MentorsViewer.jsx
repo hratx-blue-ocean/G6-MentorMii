@@ -1,15 +1,25 @@
 /* eslint-disable */
 import React from "react";
+import Mentors from "./MainPage Mentors.jsx";
 import "../Styles/Team-B MentorsViewer.css";
 
 function MentorsViewer(props) {
   return (
-    <div>
-      <div>MentorsViewer</div>
-      <div className="Team-B-MentorsViewer">
-        {props.Mentors}
-      </div>
-    </div>
+    <Mentors
+      mentorsBySkills={props.mentorsBySkills.map((mentors, index) => {
+        return (
+          <button onClick={props.SelectMentor} key={index}>
+            <div className="Team-B-Mentor" value={index}>
+              <img className="Team-B-ReviewImages" src={mentors.picture} />
+              <div>
+                {mentors.firstName} {mentors.lastName}
+              </div>
+            </div>
+            <br></br>
+          </button>
+        );
+      })}
+    ></Mentors>
   );
 }
 export default MentorsViewer;

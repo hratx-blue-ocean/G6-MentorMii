@@ -7,9 +7,19 @@ class MentorInfo extends React.Component {
     this.state = {};
   }
   render(props) {
+    // const mentors = this.props.mentorsBySkills;
+    // for (let i = 0; i < mentors.length; i++) {
+    //   if (this.state.SelectedMentor === mentors[i].firstName && this.state.SelectedMentor === mentors[i].lastName) {
+    //     return (
+    //       <div>
+    //         "sd"<div></div>
+    //       </div>
+    //     );
+    //   }
+    // }
     return (
       <div className="Team-B-MentorInfoPage">
-        {this.props.Info[3]}
+        {this.props.Info}
         <div className="Team-B-Grouped-Buttons">
           <button id="Team-B-MessageMii">MessageMii</button>
           <button id="Team-B-VideoChat">Video Chat</button>

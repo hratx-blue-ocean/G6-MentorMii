@@ -7,14 +7,15 @@
 
 .teamALogo {
   position: absolute;
-  width: 15%;
+  width: 13%;
   height: auto;
   left: 45%;
-  top: 10%;
+  top: -9px;
 }
 
 .border {
   width: auto;
+  height: 300px;
   border: 5px solid #2829288c;
-  padding: 50px;
+  padding: 250px;
 }

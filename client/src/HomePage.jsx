@@ -10,7 +10,7 @@ export default class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoggedIn: true,
+      isLoggedIn: false,
     };
     this.handleLoginClick = this.handleLoginClick.bind(this);
     this.handleLogoutClick = this.handleLogoutClick.bind(this);
@@ -34,7 +34,7 @@ export default class HomePage extends Component {
         <div className="headerBorder"></div>
         <Header />
 
-        <SignIn clicked={this.handleLoginClick} />
+        <SignIn handleLoginClick={this.handleLoginClick} />
 
         <SignUp />
       </div>

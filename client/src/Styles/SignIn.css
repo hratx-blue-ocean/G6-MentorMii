@@ -27,9 +27,26 @@
   position: absolute;
   right: 5%;
   top: 3%;
+  width: 180px;
+  font-size: 42px;
 }
 
 .modalSignInButton {
   position: relative;
   right: 0%;
 }
+
+/* .modal-content {
+  position: relative;
+  display: flex;
+  width: 160%;
+  height: 300px;
+  margin-top: 1070px;
+  margin-left: -12%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: .3rem;
+  outline: 0;
+} */

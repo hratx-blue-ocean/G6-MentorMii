@@ -6,7 +6,7 @@ function MentorsViewer(props) {
   return (
     <div>
       <div>MentorsViewer</div>
-      <div onClick={props.MentorsViewerFunc} className="Team-B-MentorsViewer">
+      <div className="Team-B-MentorsViewer">
         {props.Mentors}
       </div>
     </div>

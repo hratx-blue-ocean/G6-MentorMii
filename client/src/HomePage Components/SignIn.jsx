@@ -17,7 +17,7 @@ class SignIn extends React.Component {
     this.setState({ showModal: true });
   }
 
-  render() {
+  render(props) {
     return (
       <div className="Team-A-signIn">
         <div>
@@ -51,11 +51,8 @@ class SignIn extends React.Component {
                   className="modalSignInButton"
                   variant="primary"
                   type="submit"
-                  onClick={this.signUpButton}
-                >
-                  {" "}
-                  Sign in{" "}
-                </Button>
+                  onClick={this.props.handleLoginClick}
+                >Sign in</Button>
               </Form>
             </Modal.Body>
           </Modal>

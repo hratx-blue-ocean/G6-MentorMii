@@ -5,13 +5,12 @@ import SignIn from "./HomePage Components/SignIn.jsx";
 import SignUp from "./HomePage Components/SignUp.jsx";
 import MainPage from "./MainPage.jsx";
 import "./Styles/App.css";
-import "./Styles/MainPage.css";
 
 export default class HomePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoggedIn: true,
+      isLoggedIn: false,
     };
     this.handleLoginClick = this.handleLoginClick.bind(this);
     this.handleLogoutClick = this.handleLogoutClick.bind(this);
@@ -35,7 +34,7 @@ export default class HomePage extends Component {
         <div className="headerBorder"></div>
         <Header />
 
-        <SignIn clicked={this.handleLoginClick} />
+        <SignIn handleLoginClick={this.handleLoginClick} />
 
         <SignUp />
       </div>

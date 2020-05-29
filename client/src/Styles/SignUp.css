@@ -9,6 +9,8 @@
   position: absolute;
   right: 40%;
   top: 60%;
+  height: 50px;
+  width: 70px;
 }
 .danielQuestion {
   position: absolute;
@@ -39,6 +41,8 @@
   position: absolute;
   right: 55.2%;
   top: 60%;
+  height: 50px;
+  width: 70px;
 }
 .miyagiQuestion {
   position: absolute;

@@ -26,8 +26,9 @@ export default class MainPage extends Component {
     this.SearchDataBase = this.SearchDataBase.bind(this);
     this.getMentorsBySkills = this.getMentorsBySkills.bind(this);
     this.getAllMentor = this.getAllMentor.bind(this);
-
     this.SelectMentor = this.SelectMentor.bind(this);
+
+    this.getMentor = this.getMentor.bind(this);
   }
   updateSearch(event) {
     this.setState({ search: event.target.value });
@@ -41,8 +42,31 @@ export default class MainPage extends Component {
   SelectMentor() {
     this.setState({ SelectedMentor: event.target.textContent });
     console.log("SELECTED MENTOR", this.state.SelectedMentor);
+    this.getMentor();
   }
-
+      getMentor() {
+        // var a = this.state.SelectedMentor.split(" ", 1).join().toString();
+        // console.log("first",a);
+        var b = this.state.SelectedMentor.split(" ").reverse().shift();
+        console.log("Second",b);
+        axios
+          .get("http://localhost:3033/api/Mentor/individual", {
+            params: {
+              // firstName: a,
+              lastName: b
+            },
+          })
+          .then((res) => {
+            const data = res.data;
+            this.setState({ individualMentor: data }, () => {
+              console.log("individualMentor", [data]);
+            });
+          })
+          .catch((err) => {
+            console.error();
+          });
+    
+      }
   getMentorsBySkills() {
     const skills = this.state.search;
     axios
@@ -60,25 +84,8 @@ export default class MainPage extends Component {
       .catch((err) => {
         console.error();
       });
-  }
-  getMentors() {
-    const mentor = this.state.SelectedMentor;
-    axios
-      .get("http://localhost:3033/api/Mentor/Skills", {
-        params: {
-          mentor,
-        },
-      })
-      .then((res) => {
-        const data = res.data;
-        this.setState({ individualMentor: data }, () => {
-          console.log("individualMentor", [data]);
-        });
-      })
-      .catch((err) => {
-        console.error();
-      });
-  }
+    }
+  
   getAllMentor() {
     axios
       .get("http://localhost:3033/api/Mentor")
@@ -91,7 +98,8 @@ export default class MainPage extends Component {
       .catch((err) => {
         console.error();
       });
-  }
+    }
+
   componentDidMount() {
     this.getAllMentor();
   }
@@ -111,13 +119,14 @@ export default class MainPage extends Component {
           <div className="Team-B-Left">
             <MentorsViewer
               SelectMentor={this.SelectMentor}
+              getMentor={this.getMentor}
               mentorsBySkills={this.state.mentorsBySkills}
             ></MentorsViewer>
           </div>
           <div className="Team-B-Right">
             <MentorInfo
               MentorInfo={this.MentorInfo}
-              Info={this.state.mentorsBySkills.map((info) => {
+              Info={this.state.individualMentor.map((info) => {
                 return (
                   <div className="MentorInfoPage">
                     <img

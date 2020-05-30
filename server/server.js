@@ -47,6 +47,18 @@ app.get("/api/Mentor/Skills", (req, res) => {
     }
   });
 });
+app.get("/api/Mentor/individual", (req, res) => {
+  console.log("REQ", req.query.lastName); //req.query.firstName
+  db.getMentor( req.query.lastName, (err, data) => { // req.query.firstName,
+    if (err) {
+      console.log("Individual error in server");
+      res.status(404).send(err);
+    } else {
+      console.log("Individual success server");
+      res.status(200).send(data);
+    }
+  });
+});
 
 app.get("/api/Mentii", (req, res) => {
   db.getAllMentiis((err, data) => {

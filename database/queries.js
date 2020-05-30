@@ -45,16 +45,16 @@ const getMentorsBySkills = (skill, cb) => {
     }
   );
 };
-const getMentor = (firstName, lastName, cb) => {
+const getMentor = ( lastName, cb) => { //firstName
   connection.query(
-    "SELECT * FROM Mentor WHERE firstName = ? && lastName= ? ",
-    [firstName],[lastName],
+    "SELECT * FROM Mentor WHERE lastName = ? ", //WHERE firstName = ? &&
+    [lastName], //firstName
     (err, results) => {
       if (err) {
-        console.log("getMentorsBySkills: Failed");
+        console.log("getMentor: Failed");
         cb(err, null);
       } else {
-        console.log("getMentorsBySkills: Successful");
+        console.log("getMentor: Successful");
         cb(null, results);
       }
     }

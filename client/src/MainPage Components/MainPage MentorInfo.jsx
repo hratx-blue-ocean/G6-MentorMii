@@ -19,13 +19,7 @@ class MentorInfo extends React.Component {
     // }
     return (
       <div className="Team-B-MentorInfoPage">
-        {this.props.Info}
-        <div className="Team-B-Grouped-Buttons">
-          <button id="Team-B-MessageMii">MessageMii</button>
-          <button id="Team-B-VideoChat">Video Chat</button>
-          <button id="Team-B-Chat">Chat</button>
-          <button id="Team-B-Availability">Availability</button>
-        </div>
+      {this.props.Info}
       </div>
     );
   }

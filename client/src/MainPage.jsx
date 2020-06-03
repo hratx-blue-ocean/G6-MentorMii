@@ -3,18 +3,21 @@ import React, { Component } from "react";
 // import fetch from "node-fetch";
 import Header from "./MainPage Components/MainPage Header.jsx";
 import MentorsViewer from "./MainPage Components/MainPage MentorsViewer.jsx";
-import Reviews from "./MainPage Components/MainPage Reviews.jsx";
+// import Reviews from "./MainPage Components/MainPage Reviews.jsx";
 import MentorInfo from "./MainPage Components/MainPage MentorInfo.jsx";
 // import ChatBox from "./Team-B Components/Team-B ChatBox.jsx";
 // import "./Styles/MainPage.css";
+import "./Styles/Team-B Reviews.css"
 import "./Styles/Team-B App.css";
+// import "../Team-B MentorInfo.css";
+
 import axios from "axios";
 
 export default class MainPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // userName: "userName",
+      userName: "Marc-1",
       // Password: "12345",
       mentorsBySkills: [],
       allMentors: [],
@@ -22,18 +25,25 @@ export default class MainPage extends Component {
       SelectedMentor: "",
       search: "",
     };
+
     this.updateSearch = this.updateSearch.bind(this);
+
     this.SearchDataBase = this.SearchDataBase.bind(this);
+
     this.getMentorsBySkills = this.getMentorsBySkills.bind(this);
+
     this.getAllMentor = this.getAllMentor.bind(this);
+
     this.SelectMentor = this.SelectMentor.bind(this);
 
     this.getMentor = this.getMentor.bind(this);
   }
+
   updateSearch(event) {
     this.setState({ search: event.target.value });
     console.log("Search", this.state.search);
   }
+
   SearchDataBase() {
     const database = this.state.mentorsBySkills;
     console.log(database);
@@ -44,29 +54,30 @@ export default class MainPage extends Component {
     console.log("SELECTED MENTOR", this.state.SelectedMentor);
     this.getMentor();
   }
-      getMentor() {
-        // var a = this.state.SelectedMentor.split(" ", 1).join().toString();
-        // console.log("first",a);
-        var b = this.state.SelectedMentor.split(" ").reverse().shift();
-        console.log("Second",b);
-        axios
-          .get("http://localhost:3033/api/Mentor/individual", {
-            params: {
-              // firstName: a,
-              lastName: b
-            },
-          })
-          .then((res) => {
-            const data = res.data;
-            this.setState({ individualMentor: data }, () => {
-              console.log("individualMentor", [data]);
-            });
-          })
-          .catch((err) => {
-            console.error();
-          });
-    
-      }
+  
+  getMentor() {
+    // var a = this.state.SelectedMentor.split(" ", 1).join().toString();
+    // console.log("first",a);
+    var b = this.state.SelectedMentor.split(" ").reverse().shift();
+    console.log("Second", b);
+    axios
+      .get("http://localhost:3033/api/Mentor/individual", {
+        params: {
+          // firstName: a,
+          lastName: b,
+        },
+      })
+      .then((res) => {
+        const data = res.data;
+        this.setState({ individualMentor: data }, () => {
+          console.log("individualMentor", [data]);
+        });
+      })
+      .catch((err) => {
+        console.error();
+      });
+  }
+
   getMentorsBySkills() {
     const skills = this.state.search;
     axios
@@ -84,8 +95,8 @@ export default class MainPage extends Component {
       .catch((err) => {
         console.error();
       });
-    }
-  
+  }
+
   getAllMentor() {
     axios
       .get("http://localhost:3033/api/Mentor")
@@ -98,13 +109,13 @@ export default class MainPage extends Component {
       .catch((err) => {
         console.error();
       });
-    }
+  }
 
   componentDidMount() {
     this.getAllMentor();
   }
+
   render(props) {
- 
     return (
       <div className="Team-B-App">
         <div className="Team-B-Upper">
@@ -141,11 +152,34 @@ export default class MainPage extends Component {
                         <div>{info.bio}</div>
                       </div>
                     </div>
+                    <div className="Team-B-Grouped-Buttons">
+                      {/* <button id="Team-B-MessageMii">MessageMii</button> */}
+                      {/* <button id="Team-B-VideoChat">Video Chat</button> */}
+                      <a href="https://zoom.us/my/fth.sr" id="Team-B-VideoChat">
+                        Video Chat
+                      </a>
+                      {/* <button id="Team-B-Chat">Chat</button> */}
+                      <a id="Team-B-Chat" href="https://app.slack.com/client/T1T555TL0/DSAB29U0H/user_profile/UJ93VBDQV">
+                      Chat
+                      </a>
+                      {/* <button id="Team-B-Availability">Availability</button> */}
+                      <a href="https://calendar.google.com/calendar/r" id="Team-B-Availability">
+                      Availability
+                      </a>
+                    </div>
+                    <div>
+                      <div className="Team-B-ReviewsPage">
+                        <ul className="Team-B-Reviews" >
+                          <div>Review by {info.userName}</div>
+                          <div>{info.review}</div>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 );
               })}
             ></MentorInfo>
-            <Reviews
+            {/* <Reviews
               Reviews={this.state.mentorsBySkills.map((review) => {
                 return (
                   <div>
@@ -156,7 +190,7 @@ export default class MainPage extends Component {
                   </div>
                 );
               })}
-            ></Reviews>
+            ></Reviews> */}
           </div>
         </div>
         {/* <ChatBox></ChatBox> */}

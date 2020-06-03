@@ -1,7 +1,14 @@
 .HomePage {
   text-align: center;
 }
-
+.landingPageImage {
+  z-index: -1000;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  filter: blur(5px);
+  opacity: 0.6;
+}
 .HomePage-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
@@ -23,6 +30,14 @@
   color: #61dafb;
 }
 
+.h2, h2 {
+  font-size: 6rem;
+  margin-left: 4%;
+}
+.missionStatement{
+  text-align: center;
+  margin-top: 32%;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

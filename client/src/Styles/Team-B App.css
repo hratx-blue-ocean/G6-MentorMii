@@ -9,11 +9,12 @@
 }
 
 .Team-B-Center {
-  height: 2000px;
+  height: 1224px;
   width: auto;
   display: flex;
   border: 5px solid #2829288c;
   margin-top: 10px;
+  background: cadetblue
 }
 .Team-B-Left {
   width: 625px;
@@ -24,6 +25,7 @@
   padding-left: 25px;
   margin: 20px;
   overflow: auto;
+  background: white
 }
 .Team-B-Right {
   width: 86%;
@@ -32,6 +34,8 @@
   top: 1px;
   /* left: 20%; */
   margin: 20px;
+  background: white
+
 }
 
 .App-logo {

@@ -143,7 +143,7 @@ class SignUp extends React.Component {
         </button>
         <Modal show={this.state.showModal}>
           <Modal.Header>
-            <Modal.Title>Mentor Sign Up</Modal.Title>
+            <Modal.Title>Mentii Sign Up</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form>

@@ -11,7 +11,7 @@ function Header(props) {
         <input
           value={props.search}
           onChange={props.updateSearch}
-          placeholder="Your skill.."
+          placeholder="Desired skill.."
           id="Team-B-Search"
           type="search"
         ></input>
@@ -22,8 +22,8 @@ function Header(props) {
             props.getMentorsBySkills();
           }}
         ></button>
+      <div id="Team-B-UserName">{props.userName}</div>
       </div>
-      <div id="Team-B-UserName">{props.Username}</div>
     </div>
   );
 }

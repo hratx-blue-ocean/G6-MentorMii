@@ -5,7 +5,11 @@
 .Team-B-Upper {
   width: auto;
   border: 5px solid #2829288c;
-  padding: 50px;
+  padding: 42px;
+      padding-top: 42px;
+      padding-right: 42px;
+      padding-bottom: 42px;
+      padding-left: 42px;
 }
 
 .Team-B-Center {
@@ -16,12 +20,12 @@
   margin-top: 10px;
 }
 .Team-B-Left {
-  width: 500px;
+  width: 579px;
   border: 5px solid #2829288c;
   padding-top: 15px;
   padding-right: 69px;
   padding-bottom: 20px;
-  padding-left: 25px;
+  padding-left: 14px;
   margin: 20px;
   overflow: auto;
 }

@@ -25,10 +25,10 @@
 
 .SignInButton {
   position: absolute;
-  right: 5%;
-  top: 3%;
+  right: 7%;
+  top: 7%;
   width: 180px;
-  font-size: 42px;
+  font-size: 23px;
 }
 
 .modalSignInButton {

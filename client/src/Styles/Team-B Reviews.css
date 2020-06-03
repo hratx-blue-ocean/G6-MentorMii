@@ -1,11 +1,22 @@
 .Team-B-ReviewsPage {
-  height: 950px;
-  width: 98%;
-  margin-top: 15px;
-  margin-left: 10px;
+  height: 622px;
+  width: 100%;
+  margin-top: 53px;
+  margin-left: 0px;
   border: 3px solid #2829288c;
   overflow: auto;
+  background: cadetblue;
+      background-color: cadetblue;
+      background-position-x: 0%;
+      background-position-y: 0%;
+      background-repeat: repeat;
+      background-attachment: scroll;
+      background-image: none;
+      background-size: auto;
+      background-origin: padding-box;
+      background-clip: border-box;
 }
+
 
 .Team-B-Reviews {
   border: 3px solid #2829288c;
@@ -13,4 +24,6 @@
   margin-top: 12px;
   margin-left: 1px;
   width: 98%;
+  background-color: white;
+
 }

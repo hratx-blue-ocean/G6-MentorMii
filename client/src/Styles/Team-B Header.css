@@ -17,9 +17,10 @@
   margin-right: 60%;
 }
 #Team-B-UserName {
-  position: fixed;
-  margin-left: 78%;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  font-size: 23px;
+  position: absolute;
+  margin-left: 65%;
+  padding-top: -15px;
+  padding-bottom: 0px;
+  font-size: 26px;
+  margin-top: -6px;
 }

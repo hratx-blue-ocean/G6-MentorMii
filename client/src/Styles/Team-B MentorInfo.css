@@ -1,5 +1,5 @@
 .Team-B-MentorInfoPage {
-  height: 920px;  
+  height: 495px;
   width: 98%;
   margin-top: 3px;
   margin-left: 10px;
@@ -8,23 +8,24 @@
 .Team-B-Name {
   text-align: left;
   margin-top: 10px;
-  margin-left: 27%;
+  margin-left: 16%;
+  font-size: 50px;
+  font-family: bold;
 }
 .Team-B-AboutMe {
   border: none;
   text-align: left;
+  height: 308px;
   width: 90%;
-  height: 700px;
   font-size: 120%;
 }
 .Team-B-Grouped-Buttons {
   border: none;
-  margin-top: 4px;
   width: 98%;
 }
 .Team-B-MentorInfoImages {
-  height: 650px;
-  width: 650px;
+  height: 350px;
+  width: 350px;
   margin-left: 10px;
   border: 3px solid black;
   float: left;

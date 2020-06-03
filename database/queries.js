@@ -1,3 +1,4 @@
+/* eslint-disable */
 var mysql = require("mysql");
 var mysqlConfig = require("./dbConfig.js");
 var connection = mysql.createConnection(mysqlConfig);
